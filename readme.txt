@@ -29,6 +29,7 @@ Homepage Categories gives you a simple interface to completely control the categ
 == Screenshots ==
 
 1. The Homepage Categories settings page. This is the only menu page added.
+2. The settings page after three categories have been removed.
 
 == Changelog ==
 
