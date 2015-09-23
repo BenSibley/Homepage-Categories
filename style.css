@@ -1,0 +1,34 @@
+.homepage-categories-wrap h3 {
+    margin: 30px 0 10px 0;
+}
+.homepage-categories-wrap form > p {
+    margin: 0 0 30px 0;
+}
+.homepage-categories-wrap .form-table {
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+.homepage-categories-wrap input[type=checkbox]:checked:before {
+    content: '\274C';
+    color: red;
+    font-size: 13px;
+    line-height: 14px;
+    margin: -1px 0 0 -1px;
+}
+.homepage-categories-wrap tr:nth-child(even) {
+    background: #F9F9F9;
+}
+.homepage-categories-wrap tr:first-child {
+    background: #0074A2;
+    color: white;
+    font-weight: 600;
+}
+.homepage-categories-wrap tr:first-child th {
+    color: white;
+}
+.homepage-categories-wrap .form-table th {
+    padding: 20px 10px 20px 10px;
+}
+.homepage-categories-wrap .post-count svg {
+    margin: 0 4px -3px 0;
+}
