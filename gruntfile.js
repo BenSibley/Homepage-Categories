@@ -69,6 +69,22 @@ module.exports = function(grunt) {
                     type: 'wp-plugin'
                 }
             }
+        },
+        excludeFiles: '--exclude "*.gitignore" --exclude ".sass-cache/" --exclude "*.DS_Store" --exclude ".git/" --exclude ".idea/" --exclude "gruntfile.js" --exclude "node_modules/" --exclude "package.json" --exclude "sass/"',
+        shell: {
+            zip: {
+                command: [
+                    // delete existing copies (if they exist)
+                    'rm -R /Users/bensibley/Documents/compete-themes/dist/homepage-categories || true',
+                    'rm -R /Users/bensibley/Documents/compete-themes/dist/homepage-categories.zip || true',
+                    // copy plugin folder without any project/meta files
+                    'rsync -r /Applications/MAMP/htdocs/wordpress/wp-content/plugins/homepage-categories /Users/bensibley/Documents/compete-themes/dist/ <%= excludeFiles %>',
+                    // open dist folder
+                    'cd /Users/bensibley/Documents/compete-themes/dist/',
+                    // zip the homepage-categories folder
+                    'zip -r homepage-categories.zip homepage-categories'
+                ].join('&&')
+            }
         }
     });
 
@@ -80,8 +96,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-cssjanus');
+    grunt.loadNpmTasks('grunt-shell');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['uglify', 'watch', 'cssmin', 'makepot', 'sass', 'autoprefixer', 'cssjanus']);
+    grunt.registerTask('default', ['uglify', 'watch', 'cssmin', 'makepot', 'sass', 'autoprefixer', 'cssjanus', 'shell']);
 
 };
