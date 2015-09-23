@@ -270,7 +270,7 @@ class Homepage_Categories_Class {
 	 */
 	public function enqueue_scripts() {
 		// Register main stylesheet
-		wp_register_style( 'homepage-categories-style', HOME_CAT_URL . 'css/style.css' );
+		wp_register_style( 'homepage-categories-style', HOME_CAT_URL . 'css/style.min.css' );
 		// Enqueue main stylesheet
 		wp_enqueue_style( 'homepage-categories-style' );
 
