@@ -2,8 +2,8 @@
 /*
 Plugin Name: Homepage Categories
 Version: 0.1
-Plugin URI: https://www.competethemes.com
-Description: It's awesome
+Plugin URI: https://www.competethemes.com/homepage-categories-plugin/
+Description: Get complete control over what categories are shown on your Blog. Easily exclude categories and display just one, or many.
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Text Domain: homepage-categories
