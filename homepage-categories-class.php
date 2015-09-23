@@ -111,7 +111,7 @@ class Homepage_Categories_Class {
 		}
 		?>
 		<div id="homepage-categories-wrap" class="wrap homepage-categories-wrap">
-			<h2>Homepage Categories</h2>
+			<h2><?php _e('Homepage Categories', 'homepage-categories' ); ?></h2>
 			<form action="options.php" method="POST">
 				<?php settings_fields( 'homepage-categories-group' ); ?>
 				<?php do_settings_sections( 'homepage-categories' ); ?>
@@ -176,7 +176,7 @@ class Homepage_Categories_Class {
 	 * @since     0.1
 	 */
 	public function main_setting_section_callback() {
-		echo '<p>Check a box to remove the category from your homepage.</p>';
+		echo '<p>' . __("Check a box to remove the category from your homepage.", "homepage-categories") . '</p>';
 	}
 
 	/**
