@@ -16,10 +16,10 @@
 .homepage-categories-wrap tr:nth-child(even) {
   background: #F9F9F9; }
 .homepage-categories-wrap .post-count svg {
-  margin: 0 4px -3px 0; }
+  margin: 0 0 -3px 4px; }
 .homepage-categories-wrap input[type=checkbox]:checked:before {
   content: '\274C';
   color: red;
   font-size: 13px;
   line-height: 14px;
-  margin: -1px 0 0 -1px; }
+  margin: -1px -1px 0 0; }
