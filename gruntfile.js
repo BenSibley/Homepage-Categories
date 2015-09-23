@@ -11,6 +11,32 @@ module.exports = function(grunt) {
                 }
             }
         },
+        sass: {
+            dist: {
+                files: {
+                    'css/style.css': 'sass/style.scss'
+                }
+            }
+        },
+        autoprefixer: {
+            dist: {
+                options: {
+                    browsers: ['last 1 version', '> 1%', 'ie 8']
+                },
+                files: {
+                    'css/style.css': 'css/style.css'
+                }
+            }
+        },
+        cssjanus: {
+            dev: {
+                options: {
+                    swapLtrRtlInUrl: false // replace 'ltr' with 'rtl'
+                },
+                src: ['css/style.css'],
+                dest: 'css/rtl.css'
+            }
+        },
         cssmin: {
             combine: {
                 files: {
@@ -28,7 +54,7 @@ module.exports = function(grunt) {
             },
             css: {
                 files: ['sass/*.scss'],
-                tasks: ['cssmin'],
+                tasks: ['sass', 'autoprefixer', 'cssjanus', 'cssmin'],
                 options: {
                     livereload: true,
                     spawn: false
@@ -51,8 +77,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-wp-i18n');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-cssjanus');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['uglify', 'watch', 'cssmin', 'makepot']);
+    grunt.registerTask('default', ['uglify', 'watch', 'cssmin', 'makepot', 'sass', 'autoprefixer', 'cssjanus']);
 
 };
