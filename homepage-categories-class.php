@@ -283,7 +283,7 @@ class Homepage_Categories_Class {
 		wp_enqueue_style( 'homepage-categories-style' );
 
 		// Register main script
-		wp_register_script( 'homepage-categories-script', HOME_CAT_URL . 'js/functions.js', array('jquery'),'', true );
+		wp_register_script( 'homepage-categories-script', HOME_CAT_URL . 'js/functions.min.js', array('jquery'),'', true );
 		// Enqueue main script
 		wp_enqueue_script( 'homepage-categories-script' );
 	}
